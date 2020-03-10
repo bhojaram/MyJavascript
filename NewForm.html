@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>form design</title>
+<link rel="stylesheet" type="text/css" href="newForm.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<form>
+  <fieldset class="account-info">
+    <label>
+      Username
+      <input class="user-name" type="text" name="username" placeholder="username" required>
+    </label>
+    <label>
+      Password
+      <input class="user-password" type="password" name="password" placeholder="password" required>
+    </label>
+    <label>
+      Captcha
+      <input id="101" type="text" name="captcha" placeholder="Enter Captcha Below" autocomplete="off"  required>
+    </label>
+    <label>
+     
+      <input  id="spl" type="textarea" name="captcha" value="4XpQr9">
+    </label>
+  </fieldset>
+  <fieldset class="account-action">
+  <lable>
+    <input class="btn" type="submit" name="submit" value="Login" onclick="location.href='file:///D:/BhojaramCSS/ImageGallery.html'">
+  </lable>
+    <label>
+      <a href="https://www.google.com"> New User ??</a>
+    </label>
+  </fieldset> 
+<script type="text/javascript">
+  $(".btn").on("click", function(event){
+    if($(".user-name").val() == ""){
+      alert("Enter a valid Username!!");
+      event.stoppropagation();
+    }
+   $(".user-password").focus(function(event){
+    $(this).focus();
+    });
+  });
+  $(".btn").on("click", function(event){
+    if($(".user-password").val() == ""){
+      alert("Enter a valid Password!!");
+      event.stoppropagation();
+    }
+    $("#101").focus(function(event){
+    $(this).focus();
+    });
+  });
+  $(".btn").on("click", function(event){
+    if($("#101").val() == ""){
+      alert("Enter a valid captcha!!");
+      event.stoppropagation();
+      }
+    });
+  $(".btn").on("click", function(){
+    if( $("#101").val() == $("#spl").attr("value")){
+      alert("You are successfully logged In!!");
+    }
+    else{
+      alert("Incorrect Captcha!!");
+    }
+  });
+
+  $("input").on("mouseover", function(){
+    $(this).focus();
+  });
+  $("#spl").prop("disabled", "true");
+
+</script>
+</form>
+
+</body>
+</html>
